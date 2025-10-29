@@ -1,37 +1,54 @@
-class Calculator:
-    def add(self, a: int, b: int) -> int:
-        """Метод для сложения двух чисел."""
-        return a + b
+       int number = 10;
+        CheckNumber(number);
+        User user1 = new User();
+        user1.Id = 1;
+        user1.Name = "Диана";
+        user1.Email = "bakseevadiana69@gmail.com";
+        user1.Age = 25;
 
-    def multiply(self, a: int, b: int) -> float:
-        """Метод для умножения двух чисел, возвращающий результат в виде float."""
-        return float(a * b)
+        user1.PrintInfo();
 
+        User user2 = new User
+        {
+            Id = 2,
+            Name = "Настя",
+            Email = "bakseevaanastasia78@gmail.com",
+            Age = 22
+        };
 
-class User:
-    def __init__(self, username: str, email: str, age: int):
-        self.username = username  # Имя пользователя
-        self.email = email        # Электронная почта
-        self.age = age            # Возраст пользователя
-        self.__password = None    # Приватное свойство для хранения пароля
+        Console.WriteLine(user2.GetUserData());
+    }
 
-    def set_password(self, password: str):
-        """Метод для установки пароля."""
-        self.__password = password
+    public static int Sum(int a, int b)
+    {
+        return a + b;
+    }
+    private static void CheckNumber(int num)
+    {
+        if (num > 0)
+            Console.WriteLine("Число положительное");
+        else if (num < 0)
+            Console.WriteLine("Число отрицательное");
+        else
+            Console.WriteLine("Число равно нулю");
+    }
+}
 
-    def get_user_info(self) -> str:
-        """Метод для получения информации о пользователе."""
-        return f"Username: {self.username}, Email: {self.email}, Age: {self.age}"
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Email { get; set; }
+    public int Age { get; set; }
 
+    public void PrintInfo()
+    {
+        Console.WriteLine($"ID: {Id}, Имя: {Name}, Email: {Email}, Возраст: {Age}");
+    }
 
-# Пример использования
-if __name__ == "__main__":
-    # Создание экземпляра класса Calculator
-    calculator = Calculator()
-    print("Сложение:", calculator.add(5, 10))
-    print("Умножение:", calculator.multiply(5, 10))
-
-    # Создание экземпляра класса User
-    user = User("john_doe", "john@example.com", 30)
-    user.set_password("securepassword123")
-    print(user.get_user_info())
+    public string GetUserData()
+    {
+        return $"ID: {Id}, Имя: {Name}, Email: {Email}, Возраст: {Age}";
+    }
+}
+}
